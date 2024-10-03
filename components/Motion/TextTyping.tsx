@@ -1,7 +1,7 @@
 "use client";
 
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 import Typography, { TypographyProps } from "../Typography";
 
 type TextTypingProps = {
@@ -20,24 +20,26 @@ const TextTyping: FC<TextTypingProps> = ({
 }) => {
   const splitText = text.split("");
   return (
-    <Typography {...typographyProps}>
-      {splitText.map((chunk, idx) => (
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{
-            opacity: 1,
-            transition: {
-              duration: duration,
-              delay: idx / speed + delay,
-            },
-          }}
-          viewport={{ once: true }}
-          key={idx}
-        >
-          {chunk}
-        </motion.span>
-      ))}
-    </Typography>
+    <LazyMotion features={domAnimation}>
+      <Typography {...typographyProps}>
+        {splitText.map((chunk, idx) => (
+          <m.span
+            initial={{ opacity: 0 }}
+            whileInView={{
+              opacity: 1,
+              transition: {
+                duration: duration,
+                delay: idx / speed + delay,
+              },
+            }}
+            viewport={{ once: true }}
+            key={idx}
+          >
+            {chunk}
+          </m.span>
+        ))}
+      </Typography>
+    </LazyMotion>
   );
 };
 

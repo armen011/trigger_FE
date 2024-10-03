@@ -1,7 +1,7 @@
 "use client";
 import LinkButton from "../LinkButton";
 import { links } from "./utils";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 const container = {
   visible: {
@@ -14,7 +14,7 @@ const Links = () => {
   return (
     <>
       <div className="hidden lg:block">
-        <motion.div
+        <m.div
           className="flex md:gap-8 2xl:gap-10"
           variants={container}
           initial="hidden"
@@ -25,7 +25,7 @@ const Links = () => {
               {title}
             </LinkButton>
           ))}
-        </motion.div>
+        </m.div>
       </div>
     </>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import BurgerIcon from "@/assets/icon/burger.svg";
 import CloseIcon from "@/assets/icon/close.svg";
 import { useState } from "react";
@@ -61,18 +61,18 @@ const MobileMenu = () => {
           <BurgerIcon className="w-6 h-6 md:w-8 md:h-8 animate-smooth-appear" />
         )}
       </button>
-      <motion.nav
+      <m.nav
         initial={false}
         animate={isBurgerMenuOpened ? "open" : "closed"}
         className="block lg:hidden"
       >
-        <motion.div
+        <m.div
           variants={sidebar}
           className="bg-background-primary bg-opacity-80 fixed top-0 right-0 w-screen z-40 h-screen flex items-center justify-center"
         >
-          <motion.ul variants={variants}>
+          <m.ul variants={variants}>
             {links.map(({ href, title, variant }, idx) => (
-              <motion.li
+              <m.li
                 key={idx}
                 variants={liVariant}
                 className="mb-16"
@@ -81,11 +81,11 @@ const MobileMenu = () => {
                 <ColoredLinkButton href={href} variant={variant}>
                   {title}
                 </ColoredLinkButton>
-              </motion.li>
+              </m.li>
             ))}
-          </motion.ul>
-        </motion.div>
-      </motion.nav>
+          </m.ul>
+        </m.div>
+      </m.nav>
     </>
   );
 };

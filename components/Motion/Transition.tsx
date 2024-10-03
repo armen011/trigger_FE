@@ -1,6 +1,6 @@
 "use client";
 import { FC } from "react";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 type TransitionProps = {
   children: React.ReactNode;
@@ -20,26 +20,28 @@ const Transition: FC<TransitionProps> = ({
   className,
 }) => {
   return (
-    <motion.div
-      className={className}
-      initial={{
-        opacity: 0,
-        x: x,
-        y: y,
-      }}
-      whileInView={{
-        opacity: 1,
-        x: 0,
-        y: 0,
-        transition: {
-          duration,
-          delay,
-        },
-      }}
-      viewport={{ once: true, margin: "-180px" }}
-    >
-      {children}
-    </motion.div>
+    <LazyMotion features={domAnimation}>
+      <m.div
+        className={className}
+        initial={{
+          opacity: 0,
+          x: x,
+          y: y,
+        }}
+        whileInView={{
+          opacity: 1,
+          x: 0,
+          y: 0,
+          transition: {
+            duration,
+            delay,
+          },
+        }}
+        viewport={{ once: true, margin: "-180px" }}
+      >
+        {children}
+      </m.div>
+    </LazyMotion>
   );
 };
 

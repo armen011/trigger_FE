@@ -1,7 +1,7 @@
 "use client";
 import Link from "next/link";
 import { FC, ReactNode } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import Typography from "./Typography";
 import { usePathname } from "next/navigation";
 
@@ -23,7 +23,7 @@ const LinkButton: FC<LinkButtonProps> = ({ href, children, className }) => {
   const isActive = pathname.includes(href);
   return (
     <Link href={href}>
-      <motion.div
+      <m.div
         variants={linkButton}
         className={`${className} px-8 py-3 rounded-[50px] bg-white ${
           isActive ? "" : "bg-opacity-40"
@@ -36,7 +36,7 @@ const LinkButton: FC<LinkButtonProps> = ({ href, children, className }) => {
         >
           {children}
         </Typography>
-      </motion.div>
+      </m.div>
     </Link>
   );
 };
