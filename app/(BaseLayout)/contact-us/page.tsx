@@ -1,6 +1,6 @@
 import Typography from "@/components/Typography";
 import Section from "@/components/Section";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Metadata } from "next";
 import Form from "./_components/Form";
 import Container from "@/components/Container";

@@ -1,7 +1,7 @@
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Typography from "@/components/Typography";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import TextContent from "./TextContent";
 import HeroImage from "./HeroImage";
 

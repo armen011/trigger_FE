@@ -2,7 +2,7 @@ import Typography from "@/components/Typography";
 
 import Marquee from "react-fast-marquee";
 import getPartners from "@/utils/cms/getPartners";
-import Image from "@/components/Image";
+import Image from "next/image";
 
 const Partners = async () => {
   const partners = await getPartners();
