@@ -1,5 +1,5 @@
 import Section from "@/components/Section";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import TriggerIcon from "@/assets/icon/logo.svg";
 import Links from "./Links";
 
