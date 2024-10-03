@@ -27,7 +27,7 @@ const Input = <T extends FieldValues>({
         id={name}
         type={type}
         placeholder={placeholder}
-        className="bg-[transparent] outline-0 text-white"
+        className="bg-[transparent] outline-0 text-white min-w-full"
         {...register(name)}
       />
       <span className="top-full left-0 absolute text-[12px] text-primary-red pt-1">

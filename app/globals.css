@@ -5,3 +5,15 @@
 body {
   background-color: #1b232a;
 }
+
+input:-webkit-autofill {
+  border: none;
+  border-radius: 0.3rem;
+  caret-color: #fff; /* Pour le I quand on édite */
+  color: #fff;
+  background: transparent;
+  /* webkit autofill */
+  -webkit-text-fill-color: #fff; /* Surcharge la font color d'autofill */
+  -webkit-background-clip: text; /* Supprime le background autofill, utile pour le border radius */
+  box-shadow: 0 0 0 50px transparent inset; /* Ajoute un fake background à base d'ombrage aplatit */
+}

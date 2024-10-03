@@ -6,14 +6,15 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { contactUsSchema } from "./schema";
 import Typography from "@/components/Typography";
 import SubmitButton from "@/components/SubmitButton";
+import { submitMessage } from "./utils";
 
-const submitMessage = async (data: FormData) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 2000);
-  });
-};
+// const submitMessage = async (data: FormData) => {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(data);
+//     }, 2000);
+//   });
+// };
 
 const Form = () => {
   const {
@@ -41,7 +42,7 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
-        const Aloo = await submitMessage(data);
+        await submitMessage(data);
         reset();
       })}
       className="flex-grow max-w-[628px] w-full"
