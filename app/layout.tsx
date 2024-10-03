@@ -18,7 +18,7 @@ const RootLayout = ({
         <div className="min-w-screen min-h-screen flex flex-col justify-between overflow-x-hidden overflow-y-auto relative">
           {children}
           <Footer />
-          <div className="w-full h-full bg-[url('/images/textures.webp')] bg-contain bg-repeat absolute left-0 top-0 z-10" />
+          {/* <div className="w-full h-full bg-[url('/images/textures.webp')] bg-contain bg-repeat absolute left-0 top-0 z-10" /> */}
         </div>
       </body>
     </html>
