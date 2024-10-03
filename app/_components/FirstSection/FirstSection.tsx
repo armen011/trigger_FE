@@ -20,7 +20,7 @@ const FirstSection = () => {
         src="/images/head.png"
         alt="hero"
         layout="fill"
-        className="animate-smooth-appear max-h-[calc(100%-200px)] pr-10 lg:pr-0 lg:max-h-[unset] max-w-[357px] md:max-w-[733px] mx-auto"
+        className="animate-smooth-appear max-h-[calc(100vh-200px)] pr-10 lg:pr-0 lg:max-h-[unset] max-w-[357px] md:max-w-[733px] mx-auto"
         objectFit="contain"
       />
       <Links />
