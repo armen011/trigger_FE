@@ -30,20 +30,30 @@ const getStuff = async (roles: Role[]) => {
   );
 
   return (
-    data?.data.map((stuff) => ({
-      fullName: stuff.attributes.full_name,
-      profession: stuff.attributes.profession || undefined,
-      role: stuff.attributes.role,
-      experience: stuff.attributes.experience || undefined,
-      link: stuff.attributes.link || undefined,
-      image: {
-        src: stuff.attributes.profile_pic?.data?.attributes.url || "",
-        width: stuff.attributes.profile_pic?.data?.attributes?.width || 0,
-        height: stuff.attributes.profile_pic?.data?.attributes.height || 0,
-        alt:
-          stuff.attributes.profile_pic?.data?.attributes.alternativeText || "",
-      },
-    })) || []
+    data?.data
+      .sort(
+        (
+          { attributes: { updatedAt: prevDate } },
+          { attributes: { updatedAt: nextDate } }
+        ) => {
+          return prevDate > nextDate ? -1 : 1;
+        }
+      )
+      .map((stuff) => ({
+        fullName: stuff.attributes.full_name,
+        profession: stuff.attributes.profession || undefined,
+        role: stuff.attributes.role,
+        experience: stuff.attributes.experience || undefined,
+        link: stuff.attributes.link || undefined,
+        image: {
+          src: stuff.attributes.profile_pic?.data?.attributes.url || "",
+          width: stuff.attributes.profile_pic?.data?.attributes?.width || 0,
+          height: stuff.attributes.profile_pic?.data?.attributes.height || 0,
+          alt:
+            stuff.attributes.profile_pic?.data?.attributes.alternativeText ||
+            "",
+        },
+      })) || []
   );
 };
 
