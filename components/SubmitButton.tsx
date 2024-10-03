@@ -61,6 +61,7 @@ const SubmitButton = (props: SubmitButtonProps) => {
       className={`flex items-center gap-1 bg-white px-4 md:px-6 py-2 md:py-3 rounded-[40px] mt-7 md:mt-8 xl:mt-10 2xl:mt-12 ${
         state === "active" && "hover:bg-opacity-50 transition-colors"
       }`}
+      aria-label="contact us form submit button"
       disabled={disabledStates.includes(state)}
     >
       <Typography

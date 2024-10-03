@@ -22,7 +22,11 @@ const NavigationButton: FC<NavigationButtonProps> = ({
   className,
 }) => {
   return (
-    <button className={className} onClick={handleClick}>
+    <button
+      className={className}
+      onClick={handleClick}
+      aria-label="slider navigation button"
+    >
       <SliderArrowIcon
         className={`"w-6 h-6 md:w-8 md:h-8 xl:w-10 xl:h-10 2xl:w-12 2xl:h-12" ${
           variant === "prev" ? "transform rotate-180" : ""

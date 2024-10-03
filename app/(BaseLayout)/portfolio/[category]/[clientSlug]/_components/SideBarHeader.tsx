@@ -14,7 +14,10 @@ const SideBarHeader = ({ name, image, category }: SideBarHeaderProps) => {
   return (
     <div className="flex justify-between w-full overflow-hidden">
       <div className=" flex flex-col justify-between">
-        <button className="mt-4 md:mt-6 xl:mt-8 group cursor-pointer">
+        <button
+          className="mt-4 md:mt-6 xl:mt-8 group cursor-pointer"
+          aria-label="go to portfolio page"
+        >
           <Link href={`/portfolio/${category}`}>
             <CloseIcon className="w-6 h-6 xl:w-7 xl:h-7 2xl:h-8 2xl:w-8 [&>path]:fill-background-primary group-hover:[&>path]:opacity-60" />
           </Link>

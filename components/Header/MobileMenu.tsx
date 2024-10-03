@@ -54,6 +54,7 @@ const MobileMenu = () => {
       <button
         onClick={() => setIsBurgerMenuOpened((prev) => !prev)}
         className="block lg:hidden z-50"
+        aria-label="open sidebar menu"
       >
         {isBurgerMenuOpened ? (
           <CloseIcon className="w-6 h-6 md:w-8 md:h-8 animate-smooth-appear" />
