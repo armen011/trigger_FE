@@ -12,22 +12,20 @@ const container = {
 };
 const Links = () => {
   return (
-    <>
-      <div className="hidden lg:block">
-        <m.div
-          className="flex md:gap-8 2xl:gap-10"
-          variants={container}
-          initial="hidden"
-          animate="visible"
-        >
-          {links.map(({ href, title }, idx) => (
-            <LinkButton href={href} key={idx}>
-              {title}
-            </LinkButton>
-          ))}
-        </m.div>
-      </div>
-    </>
+    <div className="hidden lg:block">
+      <m.div
+        className="flex md:gap-8 2xl:gap-10"
+        variants={container}
+        initial="hidden"
+        animate="visible"
+      >
+        {links.map(({ href, title }, idx) => (
+          <LinkButton href={href} key={idx}>
+            {title}
+          </LinkButton>
+        ))}
+      </m.div>
+    </div>
   );
 };
 

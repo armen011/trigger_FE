@@ -21,23 +21,27 @@ const linkButton = {
 const LinkButton: FC<LinkButtonProps> = ({ href, children, className }) => {
   const pathname = usePathname();
   const isActive = pathname.includes(href);
+
   return (
-    <Link href={href}>
-      <m.div
-        variants={linkButton}
-        className={`${className} px-8 py-3 rounded-[50px] bg-white ${
-          isActive ? "" : "bg-opacity-40"
-        } group transition-colors duration-300`}
-      >
-        <Typography
-          variant="p"
-          color="lightPrimary"
-          className={`font-medium ${isActive ? "" : "group-hover:text-white"}`}
+    <>
+      <Link href={href}>
+        <div
+          className={`${className} px-8 py-3  rounded-[50px] bg-white ${
+            isActive ? "" : "bg-opacity-40"
+          } group transition-colors duration-300 animate-smooth-appear`}
         >
-          {children}
-        </Typography>
-      </m.div>
-    </Link>
+          <Typography
+            variant="p"
+            color="lightPrimary"
+            className={`font-medium ${
+              isActive ? "" : "group-hover:text-white"
+            }`}
+          >
+            {children}
+          </Typography>
+        </div>
+      </Link>
+    </>
   );
 };
 
