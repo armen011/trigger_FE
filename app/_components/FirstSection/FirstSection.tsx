@@ -22,6 +22,7 @@ const FirstSection = () => {
         layout="fill"
         className="animate-smooth-appear max-h-[680px] pr-10 lg:pr-0 lg:max-h-[unset] max-w-[357px] md:max-w-[733px] mx-auto"
         objectFit="contain"
+        priority={true}
       />
       <Links />
     </Section>
