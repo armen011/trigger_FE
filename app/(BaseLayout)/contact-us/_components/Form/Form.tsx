@@ -20,6 +20,7 @@ const Form = () => {
   const {
     register,
     handleSubmit,
+    setError,
     formState: {
       errors,
       isSubmitSuccessful,
@@ -42,8 +43,12 @@ const Form = () => {
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
-        await submitMessage(data);
-        reset();
+        const response = await submitMessage(data);
+        if (response.status === 400) {
+          setError("email", { message: "This email is already in use" });
+        } else if (response.status !== 500) {
+          reset();
+        }
       })}
       className="flex-grow max-w-[628px] w-full"
     >
