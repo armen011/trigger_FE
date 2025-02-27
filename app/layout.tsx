@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactNode } from "react";
-import Footer from "@/components/Footer";
+// import Footer from "@/components/Footer";
 import Image from "next/legacy/image";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -28,14 +28,12 @@ const RootLayout = ({
               priority
             />
           </div>
-
-          {/* Under Construction Message */}
           <div className="text-center space-y-4">
             <div className="flex items-center justify-center gap-2 text-[#622E64]">
               <span className="text-xl font-medium">Under Construction</span>
             </div>
             <p className="text-gray-600">
-              Our website is currently being updated. We'll be back soon!
+              Our website is currently being updated. We wll be back soon!
             </p>
           </div>
         </main>
