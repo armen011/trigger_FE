@@ -1,5 +1,13 @@
-const page = () => {
-  return <div>pricing</div>;
+import FirstSection from "./_components/FirstSection";
+import SecondSection from "./_components/SecondSection";
+
+const PricingPage = () => {
+  return (
+    <>
+      <FirstSection />
+      <SecondSection />
+    </>
+  );
 };
 
-export default page;
+export default PricingPage;
