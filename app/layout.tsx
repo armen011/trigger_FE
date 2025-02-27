@@ -15,29 +15,58 @@ const RootLayout = ({
   return (
     <html lang="en">
       <head></head>
-      <body className={inter.className}>
-        <div className="min-w-screen min-h-screen flex flex-col justify-between overflow-x-hidden overflow-y-auto relative">
-          {children}
-          <Footer />
-          <Image
-            src="/images/textures.webp"
-            priority
-            layout="fill"
-            className="z-10"
-          />
-          {/* <div className="w-full h-full bg-[url('/images/textures.webp')] bg-contain bg-repeat absolute left-0 top-0 z-10" /> */}
-        </div>
+      <body className="bg-white">
+        <main className="min-h-screen flex flex-col items-center justify-center p-4">
+          {/* Logo */}
+          <div className="mb-12 w-full max-w-[400px]">
+            <Image
+              src="/images/logo.png"
+              alt="Gate21 Marketing"
+              width={800}
+              height={300}
+              className="w-full h-auto"
+              priority
+            />
+          </div>
+
+          {/* Under Construction Message */}
+          <div className="text-center space-y-4">
+            <div className="flex items-center justify-center gap-2 text-[#622E64]">
+              <span className="text-xl font-medium">Under Construction</span>
+            </div>
+            <p className="text-gray-600">
+              Our website is currently being updated. We'll be back soon!
+            </p>
+          </div>
+        </main>
       </body>
     </html>
   );
+  // return (
+  //   <html lang="en">
+  //     <head></head>
+  //     <body className={inter.className}>
+  //       <div className="min-w-screen min-h-screen flex flex-col justify-between overflow-x-hidden overflow-y-auto relative">
+  //         {children}
+  //         <Footer />
+  //         <Image
+  //           src="/images/textures.webp"
+  //           priority
+  //           layout="fill"
+  //           className="z-10"
+  //         />
+  //         {/* <div className="w-full h-full bg-[url('/images/textures.webp')] bg-contain bg-repeat absolute left-0 top-0 z-10" /> */}
+  //       </div>
+  //     </body>
+  //   </html>
+  // );
 };
 
 export default RootLayout;
 
 export const metadata: Metadata = {
-  title: "Trigger",
-  description:
-    "Touchpoints. Reflrect. Results. Research based marketing agency",
+  title: "Gate 21",
+  description: "From idea to result.",
   icons: {
     icon: [
       { url: "/favicon/favicon.ico", type: "image/x-icon" },
